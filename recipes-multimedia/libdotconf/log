@@ -1,0 +1,215 @@
+| DEBUG: Executing python function extend_recipe_sysroot
+| NOTE: Direct dependencies are ['/home/alex/b2qtdev/sources/poky/meta/recipes-core/gettext/gettext_0.21.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-core/glibc/glibc_2.35.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/quilt/quilt-native_0.67.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/gcc/gcc-runtime_11.2.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/libtool/libtool-native_2.4.7.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-multimedia/pulseaudio/pulseaudio_15.0.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-core/gettext/gettext_0.21.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/automake/automake_1.16.5.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/pseudo/pseudo_git.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/gcc/gcc-cross_11.2.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/meta-boot2qt/meta-boot2qt/recipes-multimedia/flite/flite_2.2.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/libtool/libtool-cross_2.4.7.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/meta-openembedded/meta-oe/recipes-support/espeak/espeak_1.48.04.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/libtool/libtool_2.4.7.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/pkgconfig/pkgconfig_git.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/autoconf/autoconf_2.71.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/meta-myconfig/recipes-multimedia/libdotconf/libdotconf_1.3.bb:do_populate_sysroot', '/home/alex/b2qtdev/sources/poky/meta/recipes-core/glib-2.0/glib-2.0_2.72.1.bb:do_populate_sysroot', 'virtual:native:/home/alex/b2qtdev/sources/poky/meta/recipes-devtools/patch/patch_2.7.6.bb:do_populate_sysroot']
+| NOTE: Installed into sysroot: []
+| NOTE: Skipping as already exists in sysroot: ['gettext', 'glibc', 'quilt-native', 'gcc-runtime', 'libtool-native', 'pulseaudio', 'gettext-native', 'automake-native', 'pseudo-native', 'gcc-cross-arm', 'flite', 'libtool-cross', 'espeak', 'libtool', 'pkgconfig-native', 'autoconf-native', 'libdotconf', 'glib-2.0', 'patch-native', 'libxml2', 'libcroco', 'attr-native', 'linux-libc-headers', 'libgcc', 'texinfo-dummy-native', 'gettext-minimal-native', 'binutils-cross-arm', 'libmpc-native', 'gmp-native', 'xz-native', 'gnu-config-native', 'flex-native', 'zlib-native', 'mpfr-native', 'portaudio-v19', 'opkg-utils', 'm4-native', 'util-linux', 'libpcre', 'libffi', 'bash-completion', 'zlib', 'speexdsp', 'libcap', 'alsa-lib', 'systemd', 'bluez5', 'libsndfile1', 'shadow', 'base-passwd', 'dbus', 'libatomic-ops', 'base-files', 'sbc', 'shadow-native', 'shadow-sysroot', 'python3', 'jack', 'ncurses', 'libcap-ng', 'util-linux-libuuid', 'libxcrypt', 'libpam', 'bzip2', 'zstd', 'libseccomp', 'acl', 'kmod', 'readline', 'libical', 'libvorbis', 'libogg', 'flac', 'attr', 'expat', 'autoconf-archive', 'gdbm', 'xz', 'sqlite3', 'libnsl2', 'openssl', 'libtirpc', 'libsamplerate0', 'flex', 'cracklib', 'icu', 'vala', 'gobject-introspection']
+| DEBUG: Python function extend_recipe_sysroot finished
+| DEBUG: Executing shell function autotools_preconfigure
+| DEBUG: Shell function autotools_preconfigure finished
+| DEBUG: Executing python function autotools_aclocals
+| DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+| DEBUG: Python function autotools_aclocals finished
+| DEBUG: Executing shell function do_configure
+| automake (GNU automake) 1.16.5
+| Copyright (C) 2021 Free Software Foundation, Inc.
+| License GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl-2.0.html>
+| This is free software: you are free to change and redistribute it.
+| There is NO WARRANTY, to the extent permitted by law.
+| 
+| Written by Tom Tromey <tromey@redhat.com>
+|        and Alexandre Duret-Lutz <adl@gnu.org>.
+| AUTOV is 1.16
+| NOTE: Executing ACLOCAL="aclocal --system-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot/usr/share/aclocal/ --automake-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal-1.16" autoreconf -Wcross --verbose --install --force --exclude=autopoint --exclude=gtkdocize -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/git/m4/ -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal/
+| autoreconf: export WARNINGS=cross,no-obsolete
+| autoreconf: Entering directory '.'
+| autoreconf: running: aclocal --system-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot/usr/share/aclocal/ --automake-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal-1.16 -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/git/m4/ -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal/ --force -I m4
+| autoreconf: configure.ac: tracing
+| autoreconf: running: libtoolize --copy --force
+| libtoolize: putting auxiliary files in '.'.
+| libtoolize: copying file './ltmain.sh'
+| libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+| libtoolize: copying file 'm4/libtool.m4'
+| libtoolize: copying file 'm4/ltoptions.m4'
+| libtoolize: copying file 'm4/ltsugar.m4'
+| libtoolize: copying file 'm4/ltversion.m4'
+| libtoolize: copying file 'm4/lt~obsolete.m4'
+| autoreconf: configure.ac: not using Intltool
+| autoreconf: configure.ac: not using Gtkdoc
+| autoreconf: running: aclocal --system-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot/usr/share/aclocal/ --automake-acdir=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal-1.16 -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/git/m4/ -I /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal/ --force -I m4
+| autoreconf: running: /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/autoconf --include=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/git/m4/ --include=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal/ --force
+| autoreconf: running: /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/autoheader --include=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/git/m4/ --include=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/share/aclocal/ --force
+| autoreconf: running: automake --add-missing --copy --force-missing
+| configure.ac:42: installing './compile'
+| configure.ac:39: installing './missing'
+| src/api/c/Makefile.am: installing './depcomp'
+| autoreconf: Leaving directory '.'
+| NOTE: Running ../git/configure  --build=x86_64-linux 		  --host=arm-poky-linux-gnueabi 		  --target=arm-poky-linux-gnueabi 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/lib 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot  --with-espeak --with-flite --without-ibmtts --without-nas --with-alsa --with-pulse  --disable-static  --enable-nls
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/endian-little
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/arm-common
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/arm-32
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/common-linux
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/common-glibc
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/arm-linux
+| configure: loading site script /home/alex/b2qtdev/sources/poky/meta/site/common
+| configure: loading site script /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot/usr/share/arm-poky-linux-gnueabi_config_site.d/ncurses_config
+| checking for a BSD-compatible install... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/install -c
+| checking whether build environment is sane... yes
+| checking for arm-poky-linux-gnueabi-strip... arm-poky-linux-gnueabi-strip
+| checking for a race-free mkdir -p... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/mkdir -p
+| checking for gawk... gawk
+| checking whether make sets $(MAKE)... yes
+| checking whether make supports nested variables... yes
+| checking whether make supports nested variables... (cached) yes
+| checking build system type... x86_64-pc-linux-gnu
+| checking host system type... arm-poky-linux-gnueabi
+| checking how to print strings... printf
+| checking whether make supports the include directive... yes (GNU style)
+| checking for arm-poky-linux-gnueabi-gcc... arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking whether the C compiler works... yes
+| checking for C compiler default output file name... a.out
+| checking for suffix of executables...
+| checking whether we are cross compiling... yes
+| checking for suffix of object files... o
+| checking whether the compiler supports GNU C... yes
+| checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot accepts -g... yes
+| checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot option to enable C11 features... none needed
+| checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot understands -c and -o together... yes
+| checking dependency style of arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot... none
+| checking for a sed that does not truncate output... (cached) sed
+| checking for grep that handles long lines and -e... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/grep
+| checking for egrep... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/grep -E
+| checking for fgrep... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/grep -F
+| checking for ld used by arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot... arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking if the linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) is GNU ld... yes
+| checking for BSD- or MS-compatible name lister (nm)... arm-poky-linux-gnueabi-gcc-nm
+| checking the name lister (arm-poky-linux-gnueabi-gcc-nm) interface... BSD nm
+| checking whether ln -s works... yes
+| checking the maximum length of command line arguments... 1572864
+| checking how to convert x86_64-pc-linux-gnu file names to arm-poky-linux-gnueabi format... func_convert_file_noop
+| checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+| checking for arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot  option to reload object files... -r
+| checking for arm-poky-linux-gnueabi-file... no
+| checking for file... file
+| configure: WARNING: using cross tools not prefixed with host triplet
+| checking for arm-poky-linux-gnueabi-objdump... arm-poky-linux-gnueabi-objdump
+| checking how to recognize dependent libraries... pass_all
+| checking for arm-poky-linux-gnueabi-dlltool... no
+| checking for dlltool... no
+| checking how to associate runtime and link libraries... printf %s\n
+| checking for arm-poky-linux-gnueabi-ar... arm-poky-linux-gnueabi-gcc-ar
+| checking for archiver @FILE support... @
+| checking for arm-poky-linux-gnueabi-strip... (cached) arm-poky-linux-gnueabi-strip
+| checking for arm-poky-linux-gnueabi-ranlib... arm-poky-linux-gnueabi-gcc-ranlib
+| checking command to parse arm-poky-linux-gnueabi-gcc-nm output from arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot object... ok
+| checking for sysroot... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking for a working dd... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/dd
+| checking how to truncate binary pipes... /home/alex/b2qtdev/build-raspberrypi4/tmp/hosttools/dd bs=4096 count=1
+| checking for arm-poky-linux-gnueabi-mt... no
+| checking for mt... no
+| checking if : is a manifest tool... no
+| checking for stdio.h... (cached) yes
+| checking for stdlib.h... (cached) yes
+| checking for string.h... (cached) yes
+| checking for inttypes.h... (cached) yes
+| checking for stdint.h... (cached) yes
+| checking for strings.h... (cached) yes
+| checking for sys/stat.h... (cached) yes
+| checking for sys/types.h... (cached) yes
+| checking for unistd.h... (cached) yes
+| checking for vfork.h... no
+| checking for dlfcn.h... yes
+| checking for objdir... .libs
+| checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot supports -fno-rtti -fno-exceptions... no
+| checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot option to produce PIC... -fPIC -DPIC
+| checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot PIC flag -fPIC -DPIC works... yes
+| checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot static flag -static works... yes
+| checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot supports -c -o file.o... yes
+| checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot supports -c -o file.o... (cached) yes
+| checking whether the arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) supports shared libraries... yes
+| checking whether -lc should be explicitly linked in... no
+| checking dynamic linker characteristics... GNU/Linux ld.so
+| checking how to hardcode library paths into programs... immediate
+| checking for shl_load... no
+| checking for shl_load in -ldld... no
+| checking for dlopen... yes
+| checking whether a program can dlopen itself... cross
+| checking whether stripping libraries is possible... yes
+| checking if libtool supports shared libraries... yes
+| checking whether to build shared libraries... yes
+| checking whether to build static libraries... no
+| checking whether NLS is requested... yes
+| checking for msgfmt... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/msgfmt
+| checking for gmsgfmt... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/msgfmt
+| checking for xgettext... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/xgettext
+| checking for msgmerge... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/msgmerge
+| checking for ld... arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking if the linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) is GNU ld... yes
+| checking for shared library run path origin... done
+| checking 32-bit host C ABI... yes
+| checking how to run the C preprocessor... arm-poky-linux-gnueabi-gcc -E --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security
+| checking for ELF binary format... yes
+| checking for the common suffixes of directories in the library search path... lib,lib32,lib
+| checking for CFPreferencesCopyAppValue... no
+| checking for CFLocaleCopyPreferredLanguages... no
+| checking for GNU gettext in libc... yes
+| checking whether to use NLS... yes
+| checking where the gettext function comes from... libc
+| checking for arm-poky-linux-gnueabi-gcc... (cached) arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking whether the compiler supports GNU C... (cached) yes
+| checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot accepts -g... (cached) yes
+| checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot option to enable C11 features... (cached) none needed
+| checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot understands -c and -o together... (cached) yes
+| checking dependency style of arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot... (cached) none
+| checking whether the compiler supports GNU C++... yes
+| checking whether arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot accepts -g... yes
+| checking for arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot option to enable C++11 features... none needed
+| checking dependency style of arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot... none
+| checking how to run the C++ preprocessor... arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot -E
+| checking for ld used by arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot... arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot
+| checking if the linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) is GNU ld... yes
+| checking whether the arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) supports shared libraries... yes
+| checking for arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot option to produce PIC... -fPIC -DPIC
+| checking if arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot PIC flag -fPIC -DPIC works... yes
+| checking if arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot static flag -static works... yes
+| checking if arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot supports -c -o file.o... yes
+| checking if arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot supports -c -o file.o... (cached) yes
+| checking whether the arm-poky-linux-gnueabi-g++  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot linker (arm-poky-linux-gnueabi-ld --sysroot=/home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot ) supports shared libraries... yes
+| checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+| checking how to hardcode library paths into programs... immediate
+| checking whether ln -s works... yes
+| checking for help2man... no
+| checking for library containing sqrt... -lm
+| checking for library containing pthread_create... none required
+| checking for library containing lt_dlopen... -lltdl
+| checking for arm-poky-linux-gnueabi-pkg-config... no
+| checking for pkg-config... /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/recipe-sysroot-native/usr/bin/pkg-config
+| checking pkg-config is at least version 0.9.0... yes
+| checking for glib-2.0 >= 2.36... yes
+| checking for gthread-2.0... yes
+| checking for gmodule-2.0... yes
+| checking for dotconf >= 1.3... no
+| configure: error: Package requirements (dotconf >= 1.3) were not met:
+| 
+| No package 'dotconf' found
+| 
+| Consider adjusting the PKG_CONFIG_PATH environment variable if you
+| installed software in a non-standard prefix.
+| 
+| Alternatively, you may set the environment variables DOTCONF_CFLAGS
+| and DOTCONF_LIBS to avoid the need to call pkg-config.
+| See the pkg-config man page for more details.
+| NOTE: The following config.log files may provide further information.
+| NOTE: /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/build/config.log
+| ERROR: configure failed
+| WARNING: exit code 1 from a shell command.
+ERROR: Task (/home/alex/b2qtdev/sources/meta-myconfig/recipes-multimedia/speech-dispatcher/speech-dispatcher_git.bb:do_configure) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 2598 tasks of which 2592 didn't need to be rerun and 1 failed.
+NOTE: Build completion summary:
+NOTE:   do_package_qa: 0.0% sstate reuse(0 setscene, 1 scratch)
+NOTE:   do_package: 0.0% sstate reuse(0 setscene, 1 scratch)
+NOTE:   do_packagedata: 0.0% sstate reuse(0 setscene, 1 scratch)
+NOTE:   do_package_write_ipk: 0.0% sstate reuse(0 setscene, 1 scratch)
+
+Summary: 1 task failed:
+  /home/alex/b2qtdev/sources/meta-myconfig/recipes-multimedia/speech-dispatcher/speech-dispatcher_git.bb:do_configure
+Summary: There was 1 WARNING message.
+Summary: There were 2 ERROR messages, returning a non-zero exit code.
