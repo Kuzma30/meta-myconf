@@ -1,0 +1,37 @@
+WARNING: speech-dispatcher-git-r0 do_package: QA Issue: speech-dispatcher: No generic license file exists for: LGPL in any provider [license-exists]
+WARNING: speech-dispatcher-git-r0 do_package_qa: QA Issue: Recipe LICENSE includes obsolete licenses GPLv3 GPLv2 [obsolete-license]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: -dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libvoxin.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libKali.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libbaratinoo.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libKParle.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libKTrans.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libKAnalyse.so'
+-dev package speech-dispatcher-dev contains non-symlink .so '/usr/lib/libKGlobal.so' [dev-elf]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: File /usr/lib/libvoxin.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libKali.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libbaratinoo.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libKParle.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libKTrans.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libKAnalyse.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?)
+File /usr/lib/libKGlobal.so in package speech-dispatcher-dev doesn't have GNU_HASH (didn't pass LDFLAGS?) [ldflags]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: speech-dispatcher rdepends on libspeechd-dev [dev-deps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_baratinoo contained in package speech-dispatcher requires libbaratinoo.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_kali contained in package speech-dispatcher requires libKali.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_kali contained in package speech-dispatcher requires libKGlobal.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_kali contained in package speech-dispatcher requires libKTrans.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_kali contained in package speech-dispatcher requires libKParle.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_kali contained in package speech-dispatcher requires libKAnalyse.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: QA Issue: /usr/lib/speech-dispatcher-modules/sd_voxin contained in package speech-dispatcher requires libvoxin.so, but no providers found in RDEPENDS:speech-dispatcher? [file-rdeps]
+ERROR: speech-dispatcher-git-r0 do_package_qa: Fatal QA errors were found, failing task.
+ERROR: Logfile of failure stored in: /home/alex/b2qtdev/build-raspberrypi4/tmp/work/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/speech-dispatcher/git-r0/temp/log.do_package_qa.237007
+ERROR: Task (/home/alex/b2qtdev/sources/meta-myconfig/recipes-multimedia/speech-dispatcher/speech-dispatcher_git.bb:do_package_qa) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 2604 tasks of which 2600 didn't need to be rerun and 1 failed.
+NOTE: Build completion summary:
+NOTE:   do_package_qa: 0.0% sstate reuse(0 setscene, 1 scratch)
+NOTE:   do_package: 0.0% sstate reuse(0 setscene, 1 scratch)
+NOTE:   do_packagedata: 0.0% sstate reuse(0 setscene, 1 scratch)
+
+Summary: 1 task failed:
+  /home/alex/b2qtdev/sources/meta-myconfig/recipes-multimedia/speech-dispatcher/speech-dispatcher_git.bb:do_package_qa
+Summary: There were 2 WARNING messages.
+Summary: There were 11 ERROR messages, returning a non-zero exit code.
