@@ -14,23 +14,23 @@ PR = "r0"
 inherit autotools update-rc.d pkgconfig ptest gettext
 
 SRC_URI = "git://github.com/brailcom/speechd.git;branch=master;protocol=https \
-           file://speech-dispatcher.init"
+           file://speech-dispatcher.init \
+           file://libspeechd_version.h"
 
 SRCREV = "6ed1ba1885db0b5033b65faf6b65e4119938f721"
 S = "${WORKDIR}/git"
 
 LEAD_SONAME = "libspeechd.so"
 EXTRA_OECONF = " --with-espeak --with-flite --without-ibmtts --without-nas --with-alsa --with-pulse "
-
+TARGET_CC_ARCH += "${LDFLAGS}"
 INITSCRIPT_NAME = "speech-dispatcher"
 INITSCRIPT_PARAMS = "defaults 45"
 
-do_hadd() {
+do_configure:append() {
 
-        install -m 0644 ${WORKDIR}/build/src/api/c/libspeechd_version.h ${S}/src/api/c/libspeechd_version.h
+        install -m 0644 ${WORKDIR}/libspeechd_version.h ${S}/src/api/c/libspeechd_version.h
 }
-addtask hadd after do_configure before do_build
-do_hadd[nostamp] = "1"
+
 do_install() {
         install -d ${D}${bindir}
         install -d ${D}${includedir}
@@ -47,7 +47,6 @@ do_install() {
         oe_libinstall -so -C src/modules libKParle ${D}${libdir}
         oe_libinstall -so -C src/modules libKTrans ${D}${libdir}
         oe_libinstall -so -C src/modules libvoxin ${D}${libdir}
-        oe_libinstall -so -C src/modules libbaratinoo ${D}${libdir}
 
 #        oe_libinstall -so -C src/audio spd_alsa ${D}${libdir}
 #        oe_libinstall -so -C src/audio spd_oss ${D}${libdir}
@@ -69,14 +68,16 @@ do_stage() {
         install -m 0644 ${S}/src/api/c/libspeechd.h ${STAGING_INCDIR}
         oe_libinstall -so -C src/api/c libspeechd ${STAGING_LIBDIR}
 }
+FILES_SOLIBSDEV = ""
+INSANE_SKIP:${PN} += "dev-so"
 
-PACKAGES =+ "libspeechd-dev libspeechd"
+PACKAGES =+ "libspeechd libspeechd-dev"
 
 FILES:${PN} += "${libdir}/${PN}-modules/*" 
-#FILES:${PN}-dbg += "${libdir}/${PN}-modules/.debug" 
-FILES:libspeechd += "${libdir}/libspeechd.so.*"
-FILES:libspeechd-dev += "${libdir}/libspeechd* ${includedir}"
-#FILES:libspeechd-dbg += "${libdir}/.debug/libspeechd*"
+FILES:${PN}-dbg += "${libdir}/${PN}-modules/.debug" 
+FILES:libspeechd += "${libdir}/*"
+FILES:${PN}-dev += "${libdir}/* ${includedir}"
+FILES:libspeechd-dbg += "${libdir}/.debug/libspeechd*"
 
 SRC_URI[md5sum] = "bbd7ebc5b0f1b3ec4d89ad66b20d5cea"
 SRC_URI[sha256sum] = "c664ee801d1bc0500ae75739fa98bcc8ad410474c98a6757d3d1ee24a8241462"
