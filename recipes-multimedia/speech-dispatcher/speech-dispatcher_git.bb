@@ -34,7 +34,8 @@ do_configure:append() {
 do_install() {
         install -d ${D}${bindir}
         install -d ${D}${includedir}
-        install -d ${D}${libdir}/${PN}-modules
+	install -d ${D}${libdir}/${PN}-modules
+        install -d ${D}/usr/libexec/${PN}-modules
 	install -d ${D}${sysconfdir}	
 	install -d ${D}${sysconfdir}/init.d
 	install -d ${D}${sysconfdir}/speech-dispatcher
@@ -48,35 +49,36 @@ do_install() {
         oe_libinstall -so -C src/modules libKTrans ${D}${libdir}
         oe_libinstall -so -C src/modules libvoxin ${D}${libdir}
 
-#        oe_libinstall -so -C src/audio spd_alsa ${D}${libdir}
-#        oe_libinstall -so -C src/audio spd_oss ${D}${libdir}
-#        oe_libinstall -so -C src/audio spd_pulse ${D}${libdir}
+        oe_libinstall -so -C src/audio spd_alsa ${D}${libdir}
+        oe_libinstall -so -C src/audio spd_oss ${D}${libdir}
+        oe_libinstall -so -C src/audio spd_pulse ${D}${libdir}
         oe_libinstall -so -C src/api/c libspeechd ${D}${libdir}
         
         install -m 0644 ${S}/src/api/c/libspeechd.h    ${D}${includedir}
         install -m 0644 ${S}/src/api/c/libspeechd.h    ${D}${includedir}
         install -m 0755 ${WORKDIR}/build/src/clients/say/.libs/spd-say ${D}${bindir}
         install -m 0755 ${WORKDIR}/build/src/server/speech-dispatcher  ${D}${bindir}
-        install -m 0755 ${WORKDIR}/build/src/modules/sd_*   ${D}${libdir}/${PN}-modules/
+	install -m 0755 ${WORKDIR}/build/src/modules/sd_*   ${D}${libdir}/${PN}-modules/
+        install -m 0755 ${WORKDIR}/build/src/modules/sd_*.o   ${D}/usr/libexec/${PN}-modules/
 	
 	install -m 0644 ${S}/config/speechd.conf ${D}${sysconfdir}/speech-dispatcher
 	install -m 0644 ${S}/config/modules/*.conf ${D}${sysconfdir}/speech-dispatcher/modules
 	install -m 0755 ${WORKDIR}/speech-dispatcher.init ${D}${sysconfdir}/init.d/speech-dispatcher
 }
 
-do_stage() {
-        install -m 0644 ${S}/src/api/c/libspeechd.h ${STAGING_INCDIR}
-        oe_libinstall -so -C src/api/c libspeechd ${STAGING_LIBDIR}
-}
+#do_stage() {
+#        install -m 0644 ${S}/src/api/c/libspeechd.h ${STAGING_INCDIR}
+#        oe_libinstall -so -C src/api/c libspeechd ${STAGING_LIBDIR}
+#}
 FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
-
+INSANE_SKIP:libspeechd += "dev-so"
 PACKAGES =+ "libspeechd libspeechd-dev"
 
 FILES:${PN} += "${libdir}/${PN}-modules/*" 
 FILES:${PN}-dbg += "${libdir}/${PN}-modules/.debug" 
 FILES:libspeechd += "${libdir}/*"
-FILES:${PN}-dev += "${libdir}/* ${includedir}"
+FILES:libspeechd-dev += "${libdir}/* ${includedir}"
 FILES:libspeechd-dbg += "${libdir}/.debug/libspeechd*"
 
 SRC_URI[md5sum] = "bbd7ebc5b0f1b3ec4d89ad66b20d5cea"
