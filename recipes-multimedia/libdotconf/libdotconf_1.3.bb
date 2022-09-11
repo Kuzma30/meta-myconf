@@ -23,12 +23,5 @@ do_install() {
         oe_libinstall -C src -so libdotconf ${D}${libdir}
 }
 
-do_stage() {
-        install -m 0644 ${S}/src/dotconf.h ${STAGING_INCDIR}/
-        install -m 0644 ${S}/dotconf.pc ${STAGING_LIBDIR}/pkgconfig/
-        oe_libinstall -C src -so libdotconf ${STAGING_LIBDIR}/
-
-}
-
 PACKAGES =+ "dotconf"
 
