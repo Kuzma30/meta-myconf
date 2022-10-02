@@ -9,7 +9,7 @@ SRC_URI = "http://dl.bytesex.org/releases/fbida/fbi_${PV}.tar.gz"
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-${PV}:"
 S = "${WORKDIR}/fbi-${PV}"
 
-inherit autotools
+inherit autotools-brokensep
 
 PARALLEL_MAKE = ""
 
