@@ -1,0 +1,17 @@
+[Unit]
+Description=MyApp on Weston
+After=weston.service
+
+[Service]
+User=weston
+Restart=always
+Type=simple
+Environment=QT_QPA_PLATFORM=wayland
+ExecStartPre=/bin/sh -c 'echo XDG_RUNTIME_DIR="$(loginctl show-user --property=RuntimePath --value \"$USER\")" > /tmp/qtenv'
+EnvironmentFile=-/tmp/qtenv
+ExecStopPost=/bin/rm /tmp/qtenv
+ExecStart=/usr/bin/myapp
+WorkingDirectory=/home/weston
+
+[Install]
+WantedBy=multi-user.target

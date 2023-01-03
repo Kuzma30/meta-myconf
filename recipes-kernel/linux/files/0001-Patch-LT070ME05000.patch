@@ -1,0 +1,24 @@
+From 904cb1a6605ceb41a82272e0baaff0e2d798529c Mon Sep 17 00:00:00 2001
+From: Kuzemko Alexandr <kuzemkoa@gmail.com>
+Date: Mon, 2 Jan 2023 12:02:09 +0200
+Subject: [PATCH] Patch LT070ME05000
+
+---
+ drivers/gpu/drm/panel/panel-jdi-lt070me05000.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/panel/panel-jdi-lt070me05000.c b/drivers/gpu/drm/panel/panel-jdi-lt070me05000.c
+index 7fb4d98e166d..120aeeae6bf2 100644
+--- a/drivers/gpu/drm/panel/panel-jdi-lt070me05000.c
++++ b/drivers/gpu/drm/panel/panel-jdi-lt070me05000.c
+@@ -436,6 +436,7 @@ static int jdi_panel_add(struct jdi_panel *jdi)
+ 		dev_err(dev, "failed to register backlight %d\n", ret);
+ 		return ret;
+ 	}
++	jdi->base.prepare_upstream_first = true;
+ 
+ 	drm_panel_init(&jdi->base, &jdi->dsi->dev, &jdi_panel_funcs,
+ 		       DRM_MODE_CONNECTOR_DSI);
+-- 
+2.37.2
+
