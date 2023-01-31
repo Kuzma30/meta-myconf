@@ -6,8 +6,11 @@ SRC_URI += " \
 	    file://mcp2515-spi5-can1.dts \
 	    file://noeth.dts \
 	    file://0001-Patch-LT070ME05000.patch \
+	    file://0001-Fix-race-condition-in-IRQ.patch\
+	    file://patch-5.15.86-rt56.patch \
+	    file://rt.cfg \
 	    "
-PR = "r2"
+PR = "r6"
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/GT911.dtbo "
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/noeth.dtbo "
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/max98357a-no-din.dtbo "
