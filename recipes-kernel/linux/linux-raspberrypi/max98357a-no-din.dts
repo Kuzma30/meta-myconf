@@ -1,0 +1,65 @@
+// Overlay for Maxim MAX98357A audio DAC without using the PCM_DIN pin
+
+// dtparams:
+//     sdmode-pin - Specify GPIO pin to which SD_MODE is connected (default 20).
+
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    /* Enable I2S without PCM_DIN pin */
+    fragment@0 {
+        target = <&i2s>;
+        frag0: __overlay__ {
+            pinctrl-0 = <&i2s_pins_no_din>;
+            status = "okay";
+        };
+    };
+
+    /* Configure the PCM pins */
+    fragment@1 {
+        target = <&gpio>;
+        __overlay__ {
+            i2s_pins_no_din: i2s_pins_no_din {
+                brcm,pins = <18 19 21>; /* PCM_CLK, PCM_FS, PCM_DOUT */
+                brcm,function = <4 4 4>; /* ALT0: PCM */
+            };
+        };
+    };
+
+    /* DAC whose SD_MODE pin is managed by driver (via GPIO pin) */
+    fragment@2 {
+        target-path = "/";
+        __overlay__ {
+            max98357a_dac: max98357a {
+                compatible = "maxim,max98357a";
+                #sound-dai-cells = <0>;
+                sdmode-gpios = <&gpio 20 0>;   /* 2nd word overwritten by sdmode-pin parameter */
+                status = "okay";
+            };
+        };
+    };
+
+    /* Soundcard connecting I2S to DAC with SD_MODE */
+    fragment@3 {
+        target = <&sound>;
+        __overlay__ {
+            compatible = "simple-audio-card";
+            simple-audio-card,format = "i2s";
+            simple-audio-card,name = "MAX98357A";
+            status = "okay";
+            simple-audio-card,cpu {
+                sound-dai = <&i2s>;
+            };
+            simple-audio-card,codec {
+                sound-dai = <&max98357a_dac>;
+            };
+        };
+    };
+
+    __overrides__ {
+        sdmode-pin = <&max98357a_dac>,"sdmode-gpios:4";
+    };
+};
