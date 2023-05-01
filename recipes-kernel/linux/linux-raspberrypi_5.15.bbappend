@@ -6,7 +6,7 @@ SRC_URI += " \
 	    file://0001-Patch-LT070ME05000.patch \
 	    file://patch-5.15.92-rt57.patch \
 	    file://defconfig"
-PR = "r10"
+PR = "r11"
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/GT911.dtbo "
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/max98357a-no-din.dtbo "
 RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/mcp2515-spi5-can0.dtbo "
