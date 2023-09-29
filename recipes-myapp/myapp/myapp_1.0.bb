@@ -1,27 +1,22 @@
 DESCRIPTION = "My Custom Qt App"
 AUTHOR = "author@example.org"
 LICENSE = "CLOSED"
-PR = "r1"
+PR = "r3"
 
-SRC_URI =+ "file://myapp \
-            file://myapp.service \
-           "
-
-inherit systemd
+SRC_URI =+ "file://Ferti"
 
 DEPENDS += "qtbase qtdeclarative qtdeclarative-native"
 
 do_install() {
-    install -d ${D}/${bindir}
-    install -m 0755 ${WORKDIR}/myapp ${D}/${bindir}/myapp
-
-    ln -s -r ${D}/${bindir}/myapp ${D}/${bindir}/b2qt
-
-    install -m 0755 -d ${D}${systemd_unitdir}/system
-    install -m 0644 ${WORKDIR}/myapp.service ${D}${systemd_unitdir}/system/
+    install -d ${D}/mnt/
+    install -d ${D}/mnt/flash/
+    install -d ${D}/${bindir}/lib/
+    install -m 0755 ${WORKDIR}/Ferti ${D}/${bindir}/lib/Ferti
+    ln --relative --symbolic ${D}/${bindir}/lib/Ferti ${D}/${bindir}/b2qt
 }
 
-FILES_${PN} = "${bindir}/myapp \
-               ${bindir}/b2qt \
-              "
-SYSTEMD_SERVICE:${PN} = "myapp.service"
+FILES:${PN} += "${bindir}/lib/Ferti \
+                ${bindir}/b2qt \
+		/mnt/ \
+                /mnt/flash/ \
+               "
